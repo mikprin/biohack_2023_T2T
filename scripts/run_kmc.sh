@@ -8,6 +8,9 @@ echo "Using: $MAX_MEMORY Gb of memory"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 data_folder=$(realpath "$DIR/../data")
 
+KMC_DIR=$(realpath "$DIR/../kmc/bin")
+export PATH="$PATH:$KMC_DIR"
+
 kmc_results_folder="$DIR/../results/kmc"
 mkdir -p "$kmc_results_folder"
 kmc_results_folder=$(realpath "$DIR/../results/kmc")
