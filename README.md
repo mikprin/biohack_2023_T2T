@@ -1,4 +1,36 @@
 
+## Goals
+
+Goal of this repository is to analyse potential to find multicopy nucleotide sequences that where  unique in HG38 genome assembly and are multicopy in T2T genome assembly. 
+We are doing it using an external kmc utility. Fining k=75,150... Kmers and then aligning them in the original genome. Then using resulted data to check if we can align them in newer T2T assembly. 
+How to use this repository?
+Due to lack of time there are a reason to launch this software steps. 
+Step 1. Obtaining and renaming Hg38 and T2T assembly. 
+Step 2. 
+Launching kmc utility and obtaining all kmers. 
+Step 3. Converting kmers in the fas file and feeding them to BWA aligner.
+
+## Usage
+Step 1:
+
+First, you need to install the dependencies. You can do it using the following command:
+```
+./scripts/ubuntu_dependencies.sh # CLI for Ubuntu
+./scripts/get_kmc.sh # Not ready yet
+```
+
+Now you are ready to download the data and run the pipeline. You can do it using the following command:
+```
+./scripts/get_genomes.sh
+```
+
+Step 2:
+
+Now you are ready to run kmc the pipeline. You can do it using the following command:
+```
+scripts/run_kmc.sh
+```
+
 
 ## Owerview
 
