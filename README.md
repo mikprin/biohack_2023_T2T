@@ -16,6 +16,7 @@ Step 1:
 First, you need to install the dependencies. You can do it using the following command:
 ```
 ./scripts/ubuntu_dependencies.sh # CLI for Ubuntu
+scripts/get_genomes.sh # Download and unpack genome in correct form.
 ./scripts/get_kmc.sh # Not ready yet
 ```
 
@@ -28,8 +29,13 @@ Step 2:
 
 Now you are ready to run kmc the pipeline. You can do it using the following command:
 ```
-scripts/run_kmc.sh
+scripts/run_kmc.sh 
 ```
+This step will generate multiple kmers sets such as `results/kmc/${genome}_k${k}.txt` and `results/kmc/${genome}_k${k}_histogram.txt` this is a set of k-mers of length `k`.
+
+Step 3/.
+
+Use BWE aliner to search for exact matches in genome. Assuming genome was downloaded using ``
 
 
 ## Owerview
@@ -37,10 +43,15 @@ scripts/run_kmc.sh
 ## Dependencies
 
 
-## Input data
-
+## How to contact us
+Telegram: @miksolo
+Email: mikhail.solovyanov@gmail.com
 ### Genome:
 You can download the genome from NCBI using the following command:
+`scripts/get_genomes.sh`
+
+in case you want to download it manually, you can use the following commands:
+
 For T2T-CHM13v2
 ```
 curl -OJX GET "https://api.ncbi.nlm.nih.gov/datasets/v2alpha/genome/accession/GCF_009914755.1/download?include_annotation_type=GENOME_FASTA,GENOME_GFF,RNA_FASTA,CDS_FASTA,PROT_FASTA,SEQUENCE_REPORT&filename=GCF_009914755.1.zip" -H "Accept: application/zip"
